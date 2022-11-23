@@ -1,0 +1,41 @@
+h1{
+    color:white ;
+    background-color: black;
+    margin: 10px rgb(4, 4, 92);
+    border: 10px solid rgba(177, 25, 25, 0.8);
+
+}
+p{
+    color:black ;
+    background-color:aqua ;
+}
+/*a:link , a:visited{
+    background-color: blue;
+    color : whitesmoke;
+    padding: 15px 25px ;
+    text-align: center;
+    text-decoration: none;
+}*/
+.marco{
+    width: 100%;
+    height: 250px;
+    border: 1.5px solid rgba(170, 23, 23, 1);
+}
+.boton{
+    background-color: aliceblue;
+    border: 2px solid rgb(4, 4, 92);
+    color: rgb(77, 77, 185);
+    display: inline-block;
+    text-decoration: none;
+     padding : 10px;
+}
+.centrar{
+    text-align: center;
+}
+.boton:hover{
+    background-color: rgb(77, 77, 185);
+    color: aliceblue;
+}
+.derecha{
+    text-align: right;
+}
