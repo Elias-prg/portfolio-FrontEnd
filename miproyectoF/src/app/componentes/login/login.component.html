@@ -1,0 +1,41 @@
+<div class="login-box">
+
+   <!-- <img class="avatar" src="" alt="Logo de #YoProgramo">  -->
+     <h1>Login Here</h1>
+
+    <form [formGroup]="form"  (ngSubmit)="onEnviar($event)">
+        <label for="email">Email</label>
+        <input 
+        [ngClass]="{'is-valid':!Email?.hasError('required') &&Email?.hasError('email'), 'is-invalid': Email?.hasError('required') &&Email?.hasError('email')}"
+        type="text" placeholder="Enter email" formControlName="email">
+        <div *ngIf="Email?.errors && Email?.touched">
+            <p *ngIf="Email?.hasError('required')" class="text-danger">
+               El email es requerido.
+            </p>
+            <p *ngIf="Email?.hasError('email')" class="text-danger">
+               El Formato del email debe ser valido.
+            </p>
+        </div>
+
+
+        <label for="password">Password</label>
+        <input 
+        [ngClass]="{'is-valid': !Password?.hasError('required') && Password?.errors?.['minlength'], 'is-invalid':Password?.hasError('required') && Password?.errors?.['minlength']}"
+        type="password" placeholder="Enter Password" formControlName="password" >
+        <div *ngIf="Email?.errors && Email?.touched">
+            <p *ngIf="Password?.hasError('required')" class="text-danger">
+               La contraseña es requerida.
+            </p>
+            <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
+               Debe contener 8 caracteristicas o mas.
+            </p>
+        </div>
+        <input type="submit" value="Log In">
+
+        <a href="#">Lost your passwor?</a>
+            
+    </form>
+
+    <!--./imagenes/images.jpg-->
+
+</div>

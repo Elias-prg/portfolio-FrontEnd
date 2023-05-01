@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    background-color:black;
+    font-family: 'Open Sans', sans-serif;
+   
+}
+  
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color:white;
+   /* animation: fall 5s linear infinite; */
+  }
+  
+  @keyframes fall {
+    from {top: -10px;}
+    to {top: 100%;}
+  }
+
+
+/*h1{
+    color:white ;
+    background-color: orange;
+    margin: 10px rgb(4, 4, 92);
+    border: 10px solid rgba(177, 25, 25, 0.8);
+
+}
+p{
+    color:black ;
+    background-color:aqua ;
+}
+/*a:link , a:visited{
+    background-color: blue;
+    color : whitesmoke;
+    padding: 15px 25px ;
+    text-align: center;
+    text-decoration: none;
+}*/
+.marco{
+    width: 100%;
+    height: 250px;
+    border: 1.5px solid rgba(170, 23, 23, 1);
+}
+.centrar{
+    text-align: center;
+}

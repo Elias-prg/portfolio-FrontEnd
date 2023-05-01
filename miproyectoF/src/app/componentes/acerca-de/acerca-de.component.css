@@ -1,0 +1,42 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+.container{
+  margin: 0;
+  padding: 0;
+  display: flex;
+ align-items: center;
+ background: black;
+ 
+ 
+}
+.imagen1{
+    display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+img {
+    max-width: 200px;
+    height: auto;
+    margin-right: 20px;
+    margin-left: 270;
+    
+  }
+ p {
+    
+    justify-content : center;
+    
+  
+  }
+ h2{
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 40px; 
+  }
+  .description{
+    width: 50%;
+    background-color: black;
+    }
