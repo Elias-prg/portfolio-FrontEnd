@@ -1,0 +1,29 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label for="escuela">Escuela:</label>
+    <input id="escuela" formControlName="escuela">
+    <br>
+    <label for="titulo">Título:</label>
+    <input id="titulo" formControlName="titulo">
+    <br>
+    <label for="imagen">Imagen:</label>
+    <input id="imagen" formControlName="imagen">
+    <br>
+    <label for="carrera">Carrera:</label>
+    <input id="carrera" formControlName="carrera">
+    <br>
+    <label for="puntaje">Puntaje:</label>
+    <input id="puntaje" formControlName="puntaje">
+    <br>
+    <label for="inicio">Inicio:</label>
+    <input id="inicio" formControlName="inicio">
+    <br>
+    <label for="fin">Fin:</label>
+    <input id="fin" formControlName="fin">
+    <br>
+    <!-- <button (click)="onSubmit()">Actualizar datos</button> -->
+    <button (click)="onSubmit()" routerLink="/portfolio">Actualizar datos</button>
+    <button (click)="onAdd()">Agregar nuevo</button>
+  </form>
+  
+
+  

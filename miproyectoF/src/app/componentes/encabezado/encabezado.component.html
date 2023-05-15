@@ -7,7 +7,8 @@
     <!--  <img x="0" y="0" height="100%" preserveAspectRatio="xMidYMid slice" 
   width="100%"  style="height: 168px; width: 168px;" 
   src="https://th.bing.com/th/id/R.dfb7f55d8a7831bca2e66c2c44d370e9?rik=z8fB8CJytIM7Xg&pid=ImgRaw&r=0" 
-  alt="cuiddad de los simpson"> -->
+  alt="cuiddad de los simpson">   
+  routerLink="/login"    1erdiv class="banner"  -->
   <div class="banner">
     <div class="social-icons">
       
@@ -16,9 +17,11 @@
     <a href="https://www.instagram.com/pilonelias/" target="_blank"><i class="fab fa-instagram"></i></a>
     <a href="https://twitter.com/pilon_elias" target="_blank"><i class="fab fa-twitter"></i></a>
     <a href="https://twitter.com/tu-usuario-de-twitter" target="_blank"><i class="fab fa-linkedin"></i></a> <!-- cuando tenga poerlo o hacer uno para entregar ---> 
-    <a target="_blanck" class="boton" routerLink="/login" >login</a>
+    <button type="button"  class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged" >login</button>
+    <button type="button" class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged">CERRAR SESION</button>
   </div>
-
+</div>
+<div>
     <div class="banner2">
     <p>Hola <i class="far fa-hand-paper"></i>,soy </p>
     <br>

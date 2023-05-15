@@ -11,7 +11,12 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from  '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
 import { PortolioService } from './servicios/portolio.service';
-import { InterceptorService } from './servicios/interceptor.service';
+// import { InterceptorService } from './servicios/interceptor.service';
+import { EditButtonComponent } from './edit-button/edit-button.component';
+import { ModalComponent } from './componentes/modal/modal.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormComponent } from './componentes/form/form.component';
+
 
 @NgModule({
   declarations: [
@@ -21,18 +26,23 @@ import { InterceptorService } from './servicios/interceptor.service';
     EduYExpComponent,
     ProyectosComponent,
     AcercaDeComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    EditButtonComponent,
+    ModalComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule ,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    
      ],
   providers: [
-    PortolioService,
-    {provide: HTTP_INTERCEPTORS, useClass:InterceptorService, multi : true}
+    PortolioService
+   // {provide: HTTP_INTERCEPTORS, useClass:InterceptorService, multi : true}
   ],
   bootstrap: [AppComponent]
 })

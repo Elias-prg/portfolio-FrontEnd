@@ -103,26 +103,61 @@
       <a href="#">
        <div class="logo-image-container">
         <img 
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTavwdVjRnRm_aCpGMs8Or7ynf6b6onR1hF7Q&usqp=CAU" 
+       [src]="educationData[0].imagen"
         class="logo-image" />
        </div>    
        <div class="list-info">
         <div>
-          <h3>Hardvar</h3>
-          <p>Ingenieria en finanzas</p>
-          <p><time>2018</time>- <time>2022</time></p>          
+          <h3>{{educationData[0].escuela}}</h3>
+          <p>{{educationData[0].titulo}}</p>
+          <p><time>{{educationData[0].inicio}}</time>- <time>{{educationData[0].fin}}</time></p>          
         </div>
        </div>
       </a>       
     </div>
     <div class="data-control">
       <div class="btn-edit float-end">
-        <a href="#" class="btn-right"><i class="fa fa-pen"></i></a>
+        <a  class="btn-right"  routerLink="/formulario"><i class="fa fa-pen"></i></a>
       </div>
     </div>
   </li>
 </ul>
 </div>
 </div> 
-
+ -------------------
+ <div id="educacion" >
+  <div class="card-titles">
+    <h2>PersonaEjemplo</h2>
+    <div class="btn-edit float-end">
+    <a href="#" class="btn-right"><i class="fa fa-pen"></i></a>
+    </div>
+  </div>
+<div>
+<ul class="items-list">
+<li>
+  <div class="data-container">
+    <a href="#">
+     <div class="logo-image-container">
+      <img 
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTavwdVjRnRm_aCpGMs8Or7ynf6b6onR1hF7Q&usqp=CAU" 
+      class="logo-image" />
+     </div>    
+     <div class="list-info" *ngFor="let persona of personas ">
+      <div>
+        <h3>Hardvar</h3>
+        <p>Ingeniero en finanzas {{persona.nombre}} {{persona.apellido}}</p>
+        <p>{{persona.descripcion}}</p>          
+      </div>
+     </div>
+    </a>       
+  </div>
+  <div class="data-control">
+    <div class="btn-edit float-end">
+      <a href="#" class="btn-right"><i class="fa fa-pen"></i></a>
+    </div>
+  </div>
+</li>
+</ul>
+</div>
+</div>
   
