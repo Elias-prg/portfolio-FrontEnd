@@ -5,14 +5,17 @@ import { PortfolioComponent } from './componentes/portfolio/portfolio.component'
 //import { GuardGuard } from './servicios/guard.guard';
 import { EduYExpComponent } from './componentes/edu-y-exp/edu-y-exp.component';
 import { FormComponent } from './componentes/form/form.component';
+import { AgregareduyexpComponent } from './componentes/edu-y-exp/agregareduyexp.component';
 
 const routes: Routes = [
   // Aquí puedes agregar tus rutas
-  { path: 'login', component: LoginComponent },                    /*  con esto se prohiibe el acceso sin loguearse  */
-  {path:'portfolio', component: PortfolioComponent},
-  {path:"", component: PortfolioComponent}                                       /*---> despues agregar esto  ,canActivate:[GuardGuard] */
-  /* {path:"", redirectTo:"login"}, pathMatch:"full"},
-  {path:"formulario", component:FormComponent}
+  { path: 'login', component: LoginComponent },                         /*  con esto se prohiibe el acceso sin loguearse con el service del curso  */
+  {path:'portfolio', component: PortfolioComponent},                    /* ver en otro momento ---> despues agregar esto  ,canActivate:[GuardGuard] */
+  {path:"", component: PortfolioComponent}  ,                                     
+  {path:"agregarinfo", component:AgregareduyexpComponent},
+  {path:"editarinfo/{id}", component:AgregareduyexpComponent}
+
+/* {path:"", redirectTo:"login"}, pathMatch:"full"},
   { path: 'form/:id', component: EduYExpComponent} */
 ];
 

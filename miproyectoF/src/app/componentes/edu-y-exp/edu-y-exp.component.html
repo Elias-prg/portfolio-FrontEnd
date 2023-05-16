@@ -1,161 +1,41 @@
-  <!--<div class="contenido" >
-    <div class="container">
-        <h1 >Experiencia</h1> 
-        <form>
-          <div class="form-group">
-            <label for="title">Título:</label>
-            <input type="text" class="form-control" id="title">
-          </div>
-          <div class="form-group">
-            <label for="image">Imagen:</label>
-            <input type="file" class="form-control" id="image">
-          </div>
-          <div class="form-group">
-            <label for="items">Elementos:</label>
-            <textarea class="form-control" id="items"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Guardar cambios</button>
-        </form>
-      </div>
-      <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#edit-menu">+</button>
-      <div id="edit-menu" class="collapse">
-        <!--- Agrega aquí tus opciones de edición -->
-      <!--   <a href="#">Modificar</a>
-        <a href="#">Eliminar</a>
-        <a href="#">Agregar</a>
-      </div> 
-     
-    <hr>
   
-    <div class="container">
-        <h1 >Educacion</h1> 
-        <form>
-          <div class="form-group">
-            <label for="title">Título:</label>
-            <input type="text" class="form-control" id="title">
-          </div>
-          <div class="form-group">
-            <label for="image">Imagen:</label>
-            <input type="file" class="form-control" id="image">
-          </div>
-          <div class="form-group">
-            <label for="items">Elementos:</label>
-            <textarea class="form-control" id="items"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Guardar cambios</button>
-        </form>
-      </div>
-      <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#edit-menu">+</button>
-      <div id="edit-menu" class="collapse">
-        <!-- Agrega aquí tus opciones de edición --
-        <a href="#">Modificar</a>
-        <a href="#">Eliminar</a>
-        <a href="#">Agregar</a>
-      </div>
-    <hr>  --->
-        ----------------------------------------
- <div id="educacion" >
-          <div class="card-titles">
-            <h2>Experiencia</h2>
-            <div class="btn-edit float-end">
-            <a href="#" class="btn-right"><i class="fa fa-pen"></i></a>
-            </div>
-          </div>
-      <div>
-      <ul class="items-list">
-        <li>
-          <div class="data-container">
-            <a href="#">
-             <div class="logo-image-container">
-              <img 
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTavwdVjRnRm_aCpGMs8Or7ynf6b6onR1hF7Q&usqp=CAU" 
-              class="logo-image" />
-             </div>    
-             <div class="list-info">
-              <div>
-                <h3>Hardvar</h3>
-                <p>Ingenieria en finanzas</p>
-                <p><time>2018</time>- <time>2022</time></p>          
-              </div>
-             </div>
-            </a>       
-          </div>
-          <div class="data-control">
-            <div class="btn-edit float-end">
-              <a href="#" class="btn-right"><i class="fa fa-pen"></i></a>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div> 
   <div id="educacion" >
     <div class="card-titles">
-      <h2>Educacion</h2>
-      <div class="btn-edit float-end">
-      <a href="#" class="btn-right"><i class="fa fa-pen"></i></a>
-      </div>
-    </div>
-<div>
-<ul class="items-list">
-  <li>
-    <div class="data-container">
-      <a href="#">
-       <div class="logo-image-container">
-        <img 
-       [src]="educationData[0].imagen"
-        class="logo-image" />
-       </div>    
-       <div class="list-info">
-        <div>
-          <h3>{{educationData[0].escuela}}</h3>
-          <p>{{educationData[0].titulo}}</p>
-          <p><time>{{educationData[0].inicio}}</time>- <time>{{educationData[0].fin}}</time></p>          
-        </div>
-       </div>
-      </a>       
-    </div>
-    <div class="data-control">
-      <div class="btn-edit float-end">
-        <a  class="btn-right"  routerLink="/formulario"><i class="fa fa-pen"></i></a>
-      </div>
-    </div>
-  </li>
-</ul>
-</div>
-</div> 
- -------------------
- <div id="educacion" >
-  <div class="card-titles">
-    <h2>PersonaEjemplo</h2>
-    <div class="btn-edit float-end">
-    <a href="#" class="btn-right"><i class="fa fa-pen"></i></a>
-    </div>
-  </div>
+      <h2>Educacion y Experiencia</h2>
+    </div>     
 <div>
 <ul class="items-list">
 <li>
   <div class="data-container">
-    <a href="#">
+     <!--
      <div class="logo-image-container">
       <img 
       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTavwdVjRnRm_aCpGMs8Or7ynf6b6onR1hF7Q&usqp=CAU" 
       class="logo-image" />
-     </div>    
-     <div class="list-info" *ngFor="let persona of personas ">
+     </div>     -->
+     <div class="list-info" *ngFor="let Eduyexp of eduyexp ">
       <div>
-        <h3>Hardvar</h3>
-        <p>Ingeniero en finanzas {{persona.nombre}} {{persona.apellido}}</p>
-        <p>{{persona.descripcion}}</p>          
+        
+        <p>{{Eduyexp.nombreE}} </p>
+        <p>{{Eduyexp.descripcionE}}</p>      
+
+        <td *ngIf="isLogged">
+          <button class="btn btn-light" routerLink="/editarinfo/{{Eduyexp.id}}">
+              <i class="bi bi-pencil-fill"></i> EDITAR</button>
+      </td>
+      <td *ngIf="isLogged">
+          <button class="btn btn-danger" (click)="delete(Eduyexp.id)">
+              <i class="bi bi-trash-fill"></i> BORRAR</button>
+      </td>    
       </div>
      </div>
-    </a>       
+          
   </div>
-  <div class="data-control">
-    <div class="btn-edit float-end">
-      <a href="#" class="btn-right"><i class="fa fa-pen"></i></a>
-    </div>
-  </div>
+  <div class="col-lg-2">
+    <button type="button" class="btn btn-dark" routerLink="/agregarinfo" *ngIf="isLogged">
+        Agregar informacion
+    </button>
+</div>
 </li>
 </ul>
 </div>

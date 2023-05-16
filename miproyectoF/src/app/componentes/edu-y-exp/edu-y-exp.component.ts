@@ -4,6 +4,9 @@ import { AcercaDeComponent } from '../acerca-de/acerca-de.component';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Persona } from 'src/app/modelo/Persona';
+import { Eduyexp } from 'src/app/modelo/eduyexp';
+import { EduyexpserviceService } from 'src/app/servicios/eduyexpservice.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-edu-y-exp',
@@ -11,41 +14,44 @@ import { Persona } from 'src/app/modelo/Persona';
   styleUrls: ['./edu-y-exp.component.css']
 })
 export class EduYExpComponent implements OnInit{
-  educationData:any;
-
-  form = new FormGroup({
-    education: new FormControl('')
-  });
+  
  
-  personas : Persona[] = [];
-  constructor( 
-       private datosportfolio:PortolioService ,
-       private router: Router 
-     ) {        }
-   
+  //personas : Persona[] = [];
+  eduyexp: Eduyexp[] = [];
 
-     ngOnInit() {
-      this.datosportfolio.obtenerDatos().subscribe(data => {
-        this.educationData = data.education;
-      });
-      this.datosportfolio.obtenerDatos().subscribe(data => {
-        this.personas = data ;
-      })
+  constructor(private eduyexpS: EduyexpserviceService, private tokenService: TokenService) { }
+  isLogged = false;
+
+  ngOnInit(): void {
+    this.cargarInfoE();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
     }
+  }
 
-   editEducation(index: number) {
-  this.form.patchValue(this.educationData[index]);
-}
+  cargarInfoE(): void{
+    this.eduyexpS.lista().subscribe(
+      data =>{
+        this.eduyexp = data;
+      }
+    )
+  }
+
+  delete(id?: number){
+    if( id != undefined){
+      this.eduyexpS.delete(id).subscribe(
+        data => {
+          this.cargarInfoE();
+        }, err => {
+          alert("No se pudo eliminar");
+        }
+      )
+    }
+  }
 
       
-  //  ngOnInit():void {
-  //    this.datosportfolio.obtenerDatos().subscribe(data => {
-  //     console.log(data)
-  //     this.educationData=data.education;
-  //     this.form.patchValue({
-  //       education: data.education
-  //     });
-  //   });
   
    }
 
@@ -56,4 +62,15 @@ export class EduYExpComponent implements OnInit{
       this.form.patchValue({
         education: data.education
       });
-    }); */
+    }); 
+    
+    //  ngOnInit():void {
+  //    this.datosportfolio.obtenerDatos().subscribe(data => {
+  //     console.log(data)
+  //     this.educationData=data.education;
+  //     this.form.patchValue({
+  //       education: data.education
+  //     });
+  //   });
+  
+    */

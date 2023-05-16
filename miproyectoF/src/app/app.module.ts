@@ -16,6 +16,8 @@ import { EditButtonComponent } from './edit-button/edit-button.component';
 import { ModalComponent } from './componentes/modal/modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormComponent } from './componentes/form/form.component';
+import { AgregareduyexpComponent } from './componentes/edu-y-exp/agregareduyexp.component';
+import { EditedComponent } from './componentes/edu-y-exp/edited.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { FormComponent } from './componentes/form/form.component';
     PortfolioComponent,
     EditButtonComponent,
     ModalComponent,
-    FormComponent
+    FormComponent,
+    AgregareduyexpComponent,
+    EditedComponent
   ],
   imports: [
     BrowserModule,
