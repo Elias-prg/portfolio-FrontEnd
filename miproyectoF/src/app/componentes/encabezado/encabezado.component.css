@@ -1,3 +1,6 @@
+*{
+  background-color:black;
+}
 .banner{
     display: flex;
     text-align: center;

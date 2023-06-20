@@ -13,22 +13,26 @@
       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTavwdVjRnRm_aCpGMs8Or7ynf6b6onR1hF7Q&usqp=CAU" 
       class="logo-image" />
      </div>     -->
-     <div class="list-info" *ngFor="let Eduyexp of eduyexp ">
+     <tr class="list-info" *ngFor="let Eduyexp of eduyexp ">
       <div>
         
-        <p>{{Eduyexp.nombreE}} </p>
-        <p>{{Eduyexp.descripcionE}}</p>      
+        <td>
+          <p>{{ Eduyexp.nombreE }}</p>
+          <p>{{ Eduyexp.descripcionE }}</p>
+        </td>    
 
         <td *ngIf="isLogged">
-          <button class="btn btn-light" routerLink="/editarinfo/{{Eduyexp.id}}">
-              <i class="bi bi-pencil-fill"></i> EDITAR</button>
+            <button class="btn btn-light"  routerLink="/editarinfo/{{Eduyexp.id}}">        <!-- routerLink="/editarinfo/{{Eduyexp.id}}" -->
+            <i class="bi bi-pencil-fill"></i> EDITAR
+          </button>
+        
       </td>
       <td *ngIf="isLogged">
           <button class="btn btn-danger" (click)="delete(Eduyexp.id)">
               <i class="bi bi-trash-fill"></i> BORRAR</button>
       </td>    
       </div>
-     </div>
+    </tr>
           
   </div>
   <div class="col-lg-2">

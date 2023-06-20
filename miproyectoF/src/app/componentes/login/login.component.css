@@ -6,13 +6,17 @@
     font-family: sans-serif;
     height: 100vh;
 } 
+ linear-gradient(to bottom , #00FFFF 0%, #0000FF 50%,#800080 100%)
 */
+.fondo{
+    background-color: gray;
+}
 .star {
    /* position: absolute;  */
     width: 2px;
     height: 2px;
     border-radius: 50%;
-    background-color:white;
+    background-color:whitesmoke;
    /* animation: fall 5s linear infinite; */
   }
  

@@ -15,7 +15,7 @@ export class PortolioService {
   */
 
   
-   private  baseUrl = 'http://localhost:8080/auth' ;  
+   private  baseUrl = 'https://backprimerapp.onrender.com/auth/' ;  
 
   private educationSource = new BehaviorSubject<string>('');
   currentEducation = this.educationSource.asObservable();

@@ -10,8 +10,8 @@ import { EduyexpserviceService } from 'src/app/servicios/eduyexpservice.service'
   styleUrls: ['./edited.component.css']
 })
 export class EditedComponent implements OnInit{
-  eduyexp: Eduyexp | null = null;
-
+ // eduyexp!:Eduyexp;
+ eduyexp: Eduyexp | null = null;
 
   constructor(
     private  eduyexpS: EduyexpserviceService ,
@@ -21,27 +21,31 @@ export class EditedComponent implements OnInit{
 
   ngOnInit(): void {
     const id = this.activatedRouter.snapshot.params['id'];
+    console.log(id);
     this.eduyexpS.detail(id).subscribe(
-      data =>{
+      (data: Eduyexp) => {
         this.eduyexp = data;
-      }, err =>{
-         alert("Error al modificar");
-         this.router.navigate(['']);
+      },
+      (err: any) => {
+        alert("Error al modificar");
+        this.router.navigate(['']);
       }
-    )
+    );
   }
 /*
-  onUpdate(): void{
+  onUpdate(): void {
     const id = this.activatedRouter.snapshot.params['id'];
     this.eduyexpS.update(id, this.eduyexp).subscribe(
-      data => {
+      () => {
         this.router.navigate(['']);
-      }, err => {
+      },
+      (err: any) => {
         alert("Error al modificar la info");
         this.router.navigate(['']);
       }
-    )
-  } */
+    );
+  }
+  */
   onUpdate(): void {
     const id = this.activatedRouter.snapshot.params["id"];
     if (this.eduyexp) {
@@ -58,6 +62,8 @@ export class EditedComponent implements OnInit{
       alert("Error al modificar");
     }
   }
-  
+
 }
+  
+
 

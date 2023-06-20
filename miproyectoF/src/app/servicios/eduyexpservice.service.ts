@@ -8,7 +8,7 @@ import { Eduyexp } from '../modelo/eduyexp';
 })
 export class EduyexpserviceService {
 
- URL = "http://localhost:8080/info/";
+ URL = "https://backprimerapp.onrender.com/info/";
  
 
   constructor(private httpClient : HttpClient) { }

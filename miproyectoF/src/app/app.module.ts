@@ -41,7 +41,7 @@ import { EditedComponent } from './componentes/edu-y-exp/edited.component';
     AppRoutingModule,
     FormsModule ,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule
     
      ],
   providers: [
